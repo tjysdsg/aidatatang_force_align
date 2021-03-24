@@ -1,0 +1,6 @@
+- Download https://kaldi-asr.org/models/m10
+- Untar the downloaded file into a temporary directory such as `tmp/`
+- Move `tmp/exp` containing the pretrained model (`tmp/exp/chain/tdnn_1a_sp/`) to the project directory
+- Create a new dir called `data/test/`, create `wav.scp`, `text`, `utt2spk` and other files according to [kaldi data prep](https://kaldi-asr.org/doc/data_prep.html)
+- Run `run.sh`
+- Results are stored in `phone_ctm.txt`
