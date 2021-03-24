@@ -1,3 +1,6 @@
 data/
 exp/
 .ipynb*
+mfcc*/
+phone.ctm
+phone_ctm.txt

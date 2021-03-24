@@ -24,12 +24,14 @@ wav_scp=$tmp/wav.scp; [[ -f "$wav_scp" ]] && rm $wav_scp
 utt2spk=$tmp/utt2spk; [[ -f "$utt2spk" ]] && rm $utt2spk
 spk2utt=$tmp/spk2utt; [[ -f "$spk2utt" ]] && rm $spk2utt
 
-#get wavlist and utt2spk
-local/dir_wav_utt.py $corpus $tmp
+cp $corpus/* $tmp/
+
+# get wavlist and utt2spk
+# local/dir_wav_utt.py $corpus $tmp
 sort $wav_scp -o $wav_scp
 sort $utt2spk -o $utt2spk
 
-#get spk2utt from utt2spk
+# get spk2utt from utt2spk
 utils/utt2spk_to_spk2utt.pl $tmp/utt2spk | sort -k 1 | uniq > $tmp/spk2utt
 
 # copy prepared resources from tmp_dir to target dir
