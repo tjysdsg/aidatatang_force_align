@@ -3,7 +3,7 @@
 set -e
 model_dir=$1
 decode_dir=$2
-stage=1
+stage=2
 nj=$3
 
 # End configuration section.
@@ -31,7 +31,7 @@ if [ $stage -le 2 ]; then
   for test_set in $test_sets; do
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
       --nj $nj --cmd "$decode_cmd" \
-      --skip-scoring true --num-threads 8 \
+      --skip-scoring true --num-threads 10 \
       $graph_dir data/${test_set}_hires $decode_dir || exit 1;
   done
 fi

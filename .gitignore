@@ -4,3 +4,4 @@ exp/
 mfcc*/
 phone.ctm
 phone_ctm.txt
+*.zip
