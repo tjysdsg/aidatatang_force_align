@@ -3,7 +3,7 @@
 set -e
 model_dir=$1
 decode_dir=$2
-stage=2
+stage=1
 nj=$3
 
 # End configuration section.
@@ -25,7 +25,7 @@ if [ $stage -le 1 ]; then
   done
 fi
 
-#step2 decode with mfcc feature
+# step2 decode with mfcc feature
 graph_dir=$model_dir/graph
 if [ $stage -le 2 ]; then
   for test_set in $test_sets; do
